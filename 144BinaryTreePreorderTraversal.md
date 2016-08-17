@@ -2,31 +2,30 @@
 import java.util.ArrayList;
 import java.util.List;
 
-/*
-	https://leetcode.com/problems/binary-tree-inorder-traversal/
+/**
+    https://leetcode.com/problems/binary-tree-preorder-traversal/
 
-    Recursive solution is trivial, could you do it iteratively?
-    (左 -> 中 -> 右) => 中 => (左 -> 中 -> 右)
+   中 => 左节点(中 -> 左 -> 右) => 右节点(中 -> 左 -> 右)
 */
-public class BinaryTreeInorderTraversal {
+public class BinaryTreePreorderTraversal {
 
-    public void inorderTraversal1(TreeNode root, List<Integer> ints) {
+    public void preorderTraversal1(TreeNode root, List<Integer> ints) {
         if (root == null) return;
-        inorderTraversal1(root.left, ints);
         ints.add(root.val);
-        inorderTraversal1(root.right, ints);
+        preorderTraversal1(root.left, ints);
+        preorderTraversal1(root.right, ints);
     }
 
     // not so functional programming
-    public List<Integer> inorderTraversal(TreeNode root) {
+    public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> ints = new ArrayList<>();
-        inorderTraversal1(root, ints);
+        preorderTraversal1(root, ints);
         return ints;
     }
 
     public static void main(String[] args) {
 
-        BinaryTreeInorderTraversal tt = new BinaryTreeInorderTraversal();
+        BinaryTreePreorderTraversal tt = new BinaryTreePreorderTraversal();
 
         TreeNode t1 = new TreeNode(1);
         TreeNode t2 = new TreeNode(2);
@@ -45,7 +44,7 @@ public class BinaryTreeInorderTraversal {
         t4.left = t2;
         t4.right = t6;
 
-        System.out.println(tt.inorderTraversal(t4));
+        System.out.println(tt.preorderTraversal(t4));
     }
 
 }
