@@ -2,14 +2,12 @@
 import java.util.Stack;
 
 /**
-    Created by allen on 7/10/16.
-
     https://leetcode.com/problems/valid-parentheses/
 
-   这个题目的意义已经不是简单算法题的问题, 而是对于数据结构的灵活应用了. 如果不是在Stack标签下, 我也许肯定做不出来.
-
+   这个题目的意义已经不是简单算法题的问题, 而是对于数据结构的灵活应用了. 
+   如果不是在Stack标签下, 我也许肯定做不出来.
    看到Stack, 就产生了一种感觉, 这题的解法就是栈中的内容要能在字符串遍历完成之后 全部出来,
-   就像连连看一样, 成对再出来.
+   就像连连看一样, 成对才能出来.
  */
 public class ValidParentheses {
 
